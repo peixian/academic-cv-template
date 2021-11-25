@@ -1,0 +1,180 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Forked from Maria Luiza Linhares Dantas, March 6th, 2020
+%
+% This is an example of a very complete CV using the 'moderncv' package
+% and the 'timeline' package. For more information on those, please
+% access:
+% https://www.ctan.org/tex-archive/macros/latex/contrib/moderntimeline
+% https://www.ctan.org/tex-archive/macros/latex/contrib/moderncv
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt, a4paper, sans]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.85]{geometry}    % Width of the entire CV
+\setlength{\hintscolumnwidth}{4.1cm} % Width of the timeline on your left
+\usepackage{pdfpages/pdfpages}
+\usepackage{moderntimeline/moderntimeline}
+\usepackage{xpatch/xpatch}
+\usepackage{color, graphicx}
+\tlmaxdates{2012}{2022}              % Beggining and start of your timeline
+
+\newcommand{\cvreferencecolumn}[2]{%
+  \cvitem[0.8em]{}{%
+    \begin{minipage}[t]{\listdoubleitemmaincolumnwidth}#1\end{minipage}%
+    \hfill%
+    \begin{minipage}[t]{\listdoubleitemmaincolumnwidth}#2\end{minipage}%
+    }%
+}
+
+\newcommand{\cvreference}[8]{%
+    \textbf{#1}\newline% Name
+    \ifthenelse{\equal{#2}{}}{}{\addresssymbol~#2\newline}%
+    \ifthenelse{\equal{#3}{}}{}{#3\newline}%
+    \ifthenelse{\equal{#4}{}}{}{#4\newline}%
+    \ifthenelse{\equal{#5}{}}{}{#5\newline}%
+    \ifthenelse{\equal{#6}{}}{}{\emailsymbol~\texttt{\href{mailto:#6}{\nolinkurl{#6}}}\newline}%
+    \ifthenelse{\equal{#7}{}}{}{\phonesymbol~#7\newline}
+    \ifthenelse{\equal{#8}{}}{}{\mobilephonesymbol~#8}}
+
+% List of journals that I may need to use in the bibtex file
+\def\aj{AJ}
+\def\araa{ARA\&A}
+\def\apj{ApJ}
+\def\apjl{ApJ}
+\def\apjs{ApJS}
+\def\apss{Ap\&SS}
+\def\aap{A\&A}
+\def\aapr{A\&A~Rev.}
+\def\aaps{A\&AS}
+\def\mnras{MNRAS}
+\def\pasp{PASP}
+\def\pasj{PASJ}
+\def\qjras{QJRAS}
+\def\nat{Nature}
+\def\aplett{Astrophys.~Lett.}
+\def\aas{AAS}
+\def\solphys{Solar Physics}
+\def\memsai{Mem.~Soc.~Astron.~Italiana}
+
+
+% Personal Information
+\name{Peixian Wang\newline}{}
+\title{\emph{Curriculum Vitae}}
+%\address{4142 24th St, 107, Long Island City, NY, 11101}{New York, NY}
+\phone[mobile]{+1-323-942-9374}
+\email{peixian@malloc.dog}                % optional, remove / comment the line if not wanted
+\homepage{malloc.dog}    % optional, remove / comment the line if not wanted
+%\social[linkedin]{https://br.linkedin.com/in/maria-luiza-linhares-dantas-56408033}  % optional, remove / comment the line if not wanted
+%\social[twitter]{mdastro}  % optional, remove / comment the line if not wanted
+\social[github]{peixian}   % optional, remove / comment the line if not wanted
+%\extrainfo{\emailsymbol \emaillink{mdantas.astro@gmail.com}}
+
+\begin{document}
+
+\makecvtitle
+
+\section{Educational Background}
+
+\tlcventry{2020/1}{0}{MA Candidate in Near Eastern Studies}{Hagop Kevorkian Center for Near Eastern Studies}{NYU}{New York, NY}{Anticipated May 2023}
+\tlcventry{2020/1}{2020/5}{Non-degree Student}{}{CUNY Graduate Center}{New York, NY}{}
+
+\tlcventry{2019/6}{2019/7}{Arabic Summer Intensive}{}{Qasid Institute}{Amman, Jordan}{}
+
+
+\tlcventry{2018}{2019/12}{Non-degree Student}{}{Hunter College}{New York, NY}{}
+
+
+\tlcventry{2012}{2016}{BSc Astronomy}{College of Liberal Arts and Sciences}{University of Illinois}{Urbana-Champaign, Illinois}{}
+
+\bigskip
+
+
+\section{Research Interests}
+
+\cvitem{\textbf{\footnotesize{MIDDLE EAST}}}{
+  \begin{itemize}
+  \item Religious rituals of Shia in Iraq
+  \item Politics and authority within religious ceremonies
+    \end{itemize}
+    }
+
+\cvitem{\textbf{\footnotesize{LINGUISTICS}}}{
+  \begin{itemize}
+    \item Automated speech processing for religious rituals
+    \item Language transfer between Arabic, Mandarin, and English
+    \end{itemize}
+    }
+
+
+\section{Professional Experience}
+\tlcventry{2018/10}{0}{Senior Software Engineer}{Bloomberg LP}{NYC}{\href{https://bloomberg.com/company}{\texttt{bloomberg.com/company}}}{Working on intent classification on the NLP team within the AI group. Previously worked on petroleum markets and multi-asset risk.}
+\tlcventry{2018/3}{0}{Consultant}{Tokamak Software LLC}{NYC}{\href{https://tokamak.io}{\texttt{tokamak.io}}}{Running a software consultancy for distributed systems and natural language processing.}
+\tlcventry{2018/3}{2018/10}{Golang Developer}{Datadog}{NYC}{\href{https://datadoghq.com}{\texttt{datadoghq.com}}}{Built data ingestion services for Amazon Web Services, Google Cloud Platform, and Microsoft Azure.}
+\tlcventry{2016/10}{2018/3}{Backend Engineer}{NYC}{Vimeo}{\href{https://vimeo.com}{\texttt{vimeo.com}}}{Wrote and maintained Python video delivery pipeline.}
+% \tlcventry{2014/3}{2015/5}{Student Programmer}{Program in Arms Control, Disarmament, and International Security}{Urbana}{\href{https://acdis.illinois.edu}{\texttt{acdis.illinois.edu}}}{}
+
+\bigskip
+
+
+\section{Languages}
+\cvitemwithcomment{Mandarin}{Native}{}
+\cvitemwithcomment{English}{Native}{}
+\cvitemwithcomment{Modern Standard Arabic}{Intermediate}{}
+\cvitemwithcomment{Iraqi Arabic}{Advanced}{}
+
+
+\bigskip
+
+
+\section{Skills}
+
+\cvitemwithcomment{Programming Languages}{C++, Python, R, Julia, C, Erlang, Go}{}
+\medskip
+\cvitemwithcomment{Software}{Distributed systems, software reliability, formal methods}{}
+\medskip
+\cvitemwithcomment{Statistics}{Monte Carlo simulation, historical simulation, etc}{}
+\medskip
+\cvitemwithcomment{Natural Language Processing}{Deep learning, intent classification}{}
+\medskip
+\cvitemwithcomment{Finance and Economics}{Petrochemical markets, multi-asset risk systems}{}
+\bigskip
+
+
+
+\section{Affiliations}
+\subsection{Professional}
+\cvitem{}{Association for Computational Linguistics}
+\cvitem{}{Apache Software Foundation (\href{https://www.apache.org/foundation/}{\texttt{apache.org/foundation}})}
+\cvitem{}{Wilderness First Responder, NOLS}
+
+\bigskip
+
+\section{Volunteering}
+\tlcventry{2021/1}{0}{Assessor}{Airwars}{Remote}{\href{https://airwars.org}{\texttt{airwars.org}}}{Verifying and assessing civilian casualty counts from airstrikes.}
+\tlcventry{2020/5}{0}{Volunteer}{ITDRC}{NYC}{\href{https://itdrc.org}{\texttt{itdrc.org}}}{Volunteering with setting up network and internet connections for communities during disasters.}
+\tlcventry{2018/3}{2019/5}{Tutor}{New York Cares}{NYC}{\href{https://www.newyorkcares.org/}{\texttt{newyorkcares.org}}}{Tutored students in the PSAT and tutored adults in English for citizenship applications.}
+\tlcventry{2014/8}{2015/5}{Organizer}{HackIllinois}{University of Illinois}{\href{https://www.hackillinois.org/}{\texttt{hackillinois.org}}}{Helped to organize first hackathon with the Computer Science Department.}
+\tlcventry{2013}{2014}{Organizer}{Reflections|Projections Conference}{University of Illinois}{\href{https://reflectionsprojections.org/}{\texttt{reflectionsprojections.org}}}{Helped to find speakers, organize travel, and general staffing of the largest student-run technology conference in the Midwest.}
+\bigskip
+
+\section{Projects}
+\subsection{\textbf{Graduate Projects}}
+\tldatecventry{2021}{Libya Civilian Casualty Assessment}{}{}{}{\href{https://airwars.org/news-and-investigations/ten-years-after-libyan-revolution-victims-wait-for-justice/}{https://airwars.org/news-and-investigations/ten-years-after-libyan-revolution-victims-wait-for-justice/}}
+\subsection{\textbf{Undergraduate Projects}}
+
+\tldatecventry{2016}{Stellar Stream Modeling}{}{}{}{Measurement of stellar stream formation through N-body simulation (\href{https://github.com/peixian/Stellar-Stream-Modeling}{\texttt{github.com/peixian/Stellar-Stream-Modeling}})}
+\tldatecventry{2016}{Z3 Petya Solver}{}{}{}{Usage of the Z3 theorem prover to solve Petya encryption (\href{github.com/peixian/Infestor}{\texttt{github.com/peixian/Infestor}})}
+\tldatecventry{2016}{Starcraft AI}{}{}{}{Construction of a game AI through a multi-layer perceptron (\href{https://github.com/peixian/ultralisk}{\texttt{github.com/peixian/Ultralisk}})}
+\bigskip
+
+
+\section{References}
+\cvitemwithcomment{Available on request.}{}{}
+
+
+\clearpage
+
+
+\end{document}
